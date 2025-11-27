@@ -4,7 +4,7 @@ const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
 const nbt = require('prismarine-nbt');
-const mc = require('node-minecraft-protocol');
+const bedrock = require('bedrock-protocol');
 
 const app = express();
 app.use(cors());
@@ -58,9 +58,12 @@ app.post('/upload-schematic', upload.single('file'), async (req, res) => {
     const blocks = []; // Example: [{x, y, z, blockName}]
 
     // Connect to Minecraft Bedrock server
-    const client = mc.createClient({
-      host: req.body.serverIP,
-      port: parseInt(req.body.serverPort),
+    const client = bedrock.createClient({
+  host: serverIP,
+  port: parseInt(serverPort),
+  offline: true,       // skip authentication if needed
+  version: '1.20.10'   // Bedrock version you’re targeting
+});
       username: 'BedmaticaBot',
       version: '1.20.10',
     });
@@ -87,4 +90,5 @@ app.post('/upload-schematic', upload.single('file'), async (req, res) => {
 // Start server
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
+
 
