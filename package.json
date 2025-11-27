@@ -14,6 +14,8 @@
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "multer": "^2.0.2",
-    "node-minecraft-protocol": "PrismarineJS/node-minecraft-protocol"
+    "node-minecraft-protocol": "github:PrismarineJS/node-minecraft-protocol",
+    "prismarine-block": "^1.22.0",
+    "prismarine-nbt": "^2.7.0"
   }
 }
