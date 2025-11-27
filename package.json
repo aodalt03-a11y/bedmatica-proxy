@@ -11,9 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0",
-    "cors": "^2.8.5",
-    "node-minecraft-protocol": "^1.41.0"
-  }
+  "express": "^5.1.0",
+  "cors": "^2.8.5",
+  "node-minecraft-protocol": "PrismarineJS/node-minecraft-protocol"
 }
-
